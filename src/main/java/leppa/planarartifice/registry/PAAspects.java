@@ -270,7 +270,7 @@ public class PAAspects {
 		// only EntityLiving can be sacrificed
 		remove("chicken", new Aspects("volatus", 999));
 		add("creeper", new Aspects("exitium", 10));
-		set("ender_dragon", get("enderman").multiply(2).add("draco", 50));
+
 		add("llama", new Aspects("spatio", 5));
 		add("polar_bear", new Aspects("victus", 10));
 		set("rabbit", new Aspects("motus", 5, "bestia", 5, "tempus", 5));
@@ -287,11 +287,20 @@ public class PAAspects {
 		set("donkey", new Aspects("herba", 15, "terra", 5, "bestia", 15));
 		set("mule", new Aspects("spatio", 15, "terra", 5, "bestia", 15));
 		set("horse", new Aspects("motus", 15, "terra", 5, "bestia", 15));
-		// infernum for the netherdwellers
-		add("blaze", new Aspects("infernum", 5));
-		add("ghast", new Aspects("spiritus", 10, "infernum", 5));
-		add("magma_cube", new Aspects("infernum", 5, "alienis", 10));
-		add("zombie_pigman", new Aspects("infernum", 5));
+		
+		// thaumadd aspects
+		if(Loader.isModLoaded("thaumadditions")){
+			set("ender_dragon", get("enderman").multiply(2).add("draco", 50));
+			set("thaumcraft:golem", getRaw("Thaumcraft.Golem").add("imperium", 10));
+			// infernum for the netherdwellers
+			add("blaze", new Aspects("infernum", 5));
+			add("ghast", new Aspects("spiritus", 10, "infernum", 5));
+			add("magma_cube", new Aspects("infernum", 5, "alienis", 10));
+			add("zombie_pigman", new Aspects("infernum", 5));
+			set("thaumcraft:firebat", getRaw("Thaumcraft.Firebat").add("infernum", 10));
+
+			set("dragon_fireball", get(Items.FIRE_CHARGE).add("draco", 25).add("tenebrae", 10));
+		}
 		// you're literally thaumcraft??? why don't you have aspects???
 		set("thaumcraft:brainyzombie", getRaw("Thaumcraft.BrainyZombie"));
 		set("thaumcraft:giantbrainyzombie", getRaw("Thaumcraft.GiantBrainyZombie"));
@@ -304,7 +313,7 @@ public class PAAspects {
 		set("thaumcraft:eldritchgolem", new Aspects("praemunio", 25, "alienis", 25, "vitium", 25, "machina", 25, "praecantatio", 25));
 		set("thaumcraft:eldritchguardian", new Aspects("spiritus", 25, "alienis", 25, "vitium", 25, "cognitio", 25, "praecantatio", 25));
 		set("thaumcraft:eldritchwarden", new Aspects("tenebrae", 25, "alienis", 25, "vitium", 25, "exanimis", 25, "praecantatio", 25));
-		set("thaumcraft:firebat", getRaw("Thaumcraft.Firebat").add("infernum", 10));
+		
 		// flux rift is made of pure impetus, no essentia is registered
 		set("thaumcraft:inhabitedzombie", get("zombie").add("vitium", 15).add("alienis", 10).add("praecantatio", 10).add("praemunio", 10));
 		set("thaumcraft:mindspider", get("spider").add("spiritus", 5).add("cognitio", 10).add("praecantatio", 5).add("alienis", 5));
@@ -319,7 +328,6 @@ public class PAAspects {
 		set("thaumcraft:taintseedprime", get("thaumcraft:taintseed").multiply(2F));
 		set("thaumcraft:thaumslime", getRaw("Thaumcraft.ThaumSlime"));
 		set("thaumcraft:taintswarm", getRaw("Thaumcraft.TaintSwarm"));
-		set("thaumcraft:golem", getRaw("Thaumcraft.Golem").add("imperium", 10));
 		for (Aspect aspect : Aspect.aspects.values())
 			set("thaumcraft:wisp", new Aspects("sol", 5, "auram", 5, "volatus", 5).add(aspect, 2), new ThaumcraftApi.EntityTagsNBT("Type", aspect.getTag()));
 		// ITEM->ENTITY
@@ -350,7 +358,6 @@ public class PAAspects {
 		// add("lightning_bolt", new Aspects("potentia", 25, "lux", 10).add("exitium", 10, "perditio"));
 		set("fireball", get(Items.FIRE_CHARGE));
 		set("small_fireball", get(Items.FIRE_CHARGE).multiply(0.5F));
-		set("dragon_fireball", get(Items.FIRE_CHARGE).add("draco", 25).add("tenebrae", 10));
 		set("egg", get(Items.EGG));
 		set("snowball", get(Items.SNOWBALL));
 		set("ender_pearl", get(Items.ENDER_PEARL));
