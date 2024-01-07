@@ -108,6 +108,10 @@ repositories {
             name = "BlameJared Maven"
             url = uri("https://maven.blamejared.com")
         }
+        maven {
+            name = "Forge Maven"
+            url = uri("https://maven.minecraftforge.net/")
+        }
     maven {
         name = "thiakil"
         url = uri("https://maven.thiakil.com")
@@ -115,7 +119,7 @@ repositories {
 }
 
 dependencies {
-    minecraft 'net.minecraftforge:forge:1.12.2-14.23.5.2860'
+    minecraft(group = "net.minecraftforge", name = "forge", version = "${versionMc}-${versionForge}")
     implementation(fg.deobf(group = "mezz.jei", name = "jei_${versionMc}", version = versionJEI))
     implementation(group = "curse.maven", name = "baubles-227083", version = versionBaubles)
     implementation(fg.deobf(group = "curse.maven", name = "thaumcraft-223628", version = versionThaumcraft))
