@@ -105,8 +105,8 @@ repositories {
         url = uri("https://dvs1.progwml6.com/files/maven")
     }
         maven {
-            name 'BlameJared Maven'
-            url 'https://maven.blamejared.com'
+            name = "BlameJared Maven"
+            url = uri("https://maven.blamejared.com")
         }
     maven {
         name = "thiakil"
