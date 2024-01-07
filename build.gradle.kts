@@ -117,7 +117,7 @@ repositories {
 dependencies {
     minecraft(group = "net.minecraftforge", name = "forge", version = "${versionMc}-${versionForge}")
     implementation(fg.deobf(mezz.jei:jei_1.12.2:4.16.1.302))
-    implementation(group = "com.azanor.baubles", name = "Baubles", version = "${versionMcMajor}-${versionBaubles}")
+    implementation ("curse.maven:baubles-227083:2518667")
     implementation(fg.deobf(group = "curse.maven", name = "thaumcraft-223628", version = versionThaumcraft))
     implementation(group = "curse.maven", name = "thaumicaugmentation-319441", version = versionAugmentation)
     implementation(group = "curse.maven", name = "thaumic-wonders-316704", version = versionWonders)
