@@ -115,7 +115,7 @@ repositories {
 }
 
 dependencies {
-    minecraft(group = "net.minecraftforge", name = "forge", version = "${versionMc}-${versionForge}")
+    minecraft 'net.minecraftforge:forge:1.12.2-14.23.5.2860'
     implementation(fg.deobf(group = "mezz.jei", name = "jei_${versionMc}", version = versionJEI))
     implementation(group = "curse.maven", name = "baubles-227083", version = versionBaubles)
     implementation(fg.deobf(group = "curse.maven", name = "thaumcraft-223628", version = versionThaumcraft))
