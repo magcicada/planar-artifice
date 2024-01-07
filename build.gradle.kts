@@ -104,6 +104,10 @@ repositories {
         name = "Progwml6 maven"
         url = uri("https://dvs1.progwml6.com/files/maven")
     }
+        maven {
+            name 'BlameJared Maven'
+            url 'https://maven.blamejared.com'
+        }
     maven {
         name = "thiakil"
         url = uri("https://maven.thiakil.com")
@@ -112,7 +116,7 @@ repositories {
 
 dependencies {
     minecraft(group = "net.minecraftforge", name = "forge", version = "${versionMc}-${versionForge}")
-    implementation(fg.deobf(group = "mezz.jei", name = "jei_${versionMc}", version = versionJEI))
+    implementation(fg.deobf(mezz.jei:jei_1.12.2:4.16.1.302))
     implementation(group = "com.azanor.baubles", name = "Baubles", version = "${versionMcMajor}-${versionBaubles}")
     implementation(fg.deobf(group = "curse.maven", name = "thaumcraft-223628", version = versionThaumcraft))
     implementation(group = "curse.maven", name = "thaumicaugmentation-319441", version = versionAugmentation)
@@ -136,8 +140,8 @@ dependencies {
     implementation(group = "curse.maven", name = "forestry-59751", version = versionForestry)
     implementation(group = "curse.maven", name = "magic-bees-65764", version = versionMagicBees)
     implementation(group = "curse.maven", name = "the-twilight-forest-227639", version = versionTwilight)
-    implementation(fg.deobf(group = "slimeknights.mantle", name = "Mantle", version = "${versionMcMajor}-${versionMantle}"))
-    implementation(fg.deobf(group = "slimeknights", name = "TConstruct", version = "${versionMc}-${versionTConstruct}"))
+	implementation rfg.deobf("curse.maven:tinkers-construct-74072:2902483")
+	implementation rfg.deobf("curse.maven:mantle-74924:2713386")
     implementation(group = "curse.maven", name = "applied-energistics-2-223794", version = versionAE2)
     implementation(group = "curse.maven", name = "refined-storage-243076", version = versionRS)
     implementation(group = "curse.maven", name = "mysticallib-277064", version = versionMysticalLib)
