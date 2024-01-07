@@ -93,6 +93,7 @@ fancyGradle {
 }
 
 repositories {
+    maven { url = 'https://maven.minecraftforge.net/' }
     maven {
         name = "Cursemaven"
         url = uri("https://www.cursemaven.com")
@@ -111,7 +112,7 @@ repositories {
 }
 
 dependencies {
-    minecraft(group = "net.minecraftforge", name = "forge", version = "${versionMc}-${versionForge}")
+    minecraft 'net.minecraftforge:forge:1.12.2-14.23.5.2847'
     implementation(fg.deobf(group = "mezz.jei", name = "jei_${versionMc}", version = versionJEI))
     implementation(group = "com.azanor.baubles", name = "Baubles", version = "${versionMcMajor}-${versionBaubles}")
     implementation(fg.deobf(group = "curse.maven", name = "thaumcraft-223628", version = versionThaumcraft))
