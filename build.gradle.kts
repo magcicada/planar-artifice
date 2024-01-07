@@ -116,8 +116,8 @@ repositories {
 
 dependencies {
     minecraft(group = "net.minecraftforge", name = "forge", version = "${versionMc}-${versionForge}")
-    implementation(fg.deobf(mezz.jei:jei_1.12.2:4.16.1.302))
-    implementation ("curse.maven:baubles-227083:2518667")
+    implementation(fg.deobf(group = "mezz.jei", name = "jei_${versionMc}", version = versionJEI))
+    implementation(group = "curse.maven", name = "baubles-227083", version = 2518667)
     implementation(fg.deobf(group = "curse.maven", name = "thaumcraft-223628", version = versionThaumcraft))
     implementation(group = "curse.maven", name = "thaumicaugmentation-319441", version = versionAugmentation)
     implementation(group = "curse.maven", name = "thaumic-wonders-316704", version = versionWonders)
@@ -140,8 +140,8 @@ dependencies {
     implementation(group = "curse.maven", name = "forestry-59751", version = versionForestry)
     implementation(group = "curse.maven", name = "magic-bees-65764", version = versionMagicBees)
     implementation(group = "curse.maven", name = "the-twilight-forest-227639", version = versionTwilight)
-	implementation rfg.deobf("curse.maven:tinkers-construct-74072:2902483")
-	implementation rfg.deobf("curse.maven:mantle-74924:2713386")
+    implementation(fg.deobf(group = "curse.maven", name = "tinkers-construct-74072", version = 2902483))
+    implementation(fg.deobf(group = "curse.maven", name = "mantle-74924", version = 2713386))
     implementation(group = "curse.maven", name = "applied-energistics-2-223794", version = versionAE2)
     implementation(group = "curse.maven", name = "refined-storage-243076", version = versionRS)
     implementation(group = "curse.maven", name = "mysticallib-277064", version = versionMysticalLib)
